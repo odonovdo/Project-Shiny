@@ -1,29 +1,30 @@
 
-# This is the user-interface definition of a Shiny web application.
-# You can find out more about building applications with Shiny here:
-#
-# http://shiny.rstudio.com
-#
 library(shiny)
 
 shinyUI(fluidPage(
 
   # Application title
-  titlePanel("Old Faithful Geyser Data"),
+  titlePanel("Call Centre Metrics"),
 
   # Sidebar with a slider input for number of bins
   sidebarLayout(
     sidebarPanel(
-      sliderInput("bins",
-                  "Number of bins:",
+      sliderInput("Agents",
+                  "Number of Agents:",
                   min = 1,
-                  max = 50,
-                  value = 30)
-    ),
+                  max = 15,
+                  value = 5),
+      sliderInput("N",
+                  "Number of Customers:",
+                  min = 100,
+                  max = 15000,
+                  value = 5000)),
+      
 
-    # Show a plot of the generated distribution
     mainPanel(
-      plotOutput("distPlot")
+      plotOutput("distPlot"),
+      plotOutput("AgentPlot")
+      
     )
   )
 ))
