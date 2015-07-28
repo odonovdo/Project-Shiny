@@ -1,0 +1,17 @@
+{
+    "contents" : "\nlibrary(shiny)\n\nshinyUI(fluidPage(\n\n  # Application title\n  titlePanel(\"Example of Call Arrival rates for a Call Centre\"),\n\n  # Sidebar with a slider input for number of bins\n  sidebarLayout(\n    sidebarPanel(\n      sliderInput(\"N\",\n                  \"Number of Customers:\",\n                  min = 100,\n                  max = 15000,\n                  value = 5000,step = 250,\n                  animate = TRUE),\n      \n      numericInput(\"NoA\",\"No. Average Staff\",\n                   1,\n                   min=0,max=9,step = 1),\n      \n      numericInput(\"NoE\",\"No. Experienced Staff\",\n                   1,\n                   min=0,max=9,step = 1),\n      numericInput(\"NoN\",\"No. Novice Staff\",\n                   1,\n                   min=0,max=9,step = 1),\n      \n      selectInput(\"p\",\"Probability of a Customer Calling %\",c(0.1,0.5,1,5,10),selected = 1),\n      submitButton(\"Update View\")),\n      \n    mainPanel(\n          tabsetPanel(\n                tabPanel(\"Plot\", plotOutput(\"distPlot\",width = \"100%\"), \n                         plotOutput(\"AgentPlot\",width = \"80%\")), \n                tabPanel(\"Summary\", verbatimTextOutput(\"summary\")), \n                tabPanel(\"Table\", tableOutput(\"table\"),plotOutput(\"ProdPlot\"))\n          )\n    )\n   \n  )\n))\n",
+    "created" : 1438040288389.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "732267044",
+    "id" : "DF51A3EB",
+    "lastKnownWriteTime" : 1438046537,
+    "path" : "C:/Users/odonovad/Desktop/Project Shiny/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
